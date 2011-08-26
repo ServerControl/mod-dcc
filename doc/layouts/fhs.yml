@@ -1,0 +1,53 @@
+
+Directories:
+   Base:
+      bin:
+         name: bin
+         chmod: 755
+         user: root
+         group: root
+
+   Runtime:
+      pid:
+         name: var/run
+         chmod: 755
+         user: <%= ServerControl::Args->get->{'user'} %>
+         group: <%= ServerControl::Args->get->{'group'} %>
+      log:
+         name: var/log
+         chmod: 755
+         user: <%= ServerControl::Args->get->{'user'} %>
+         group: <%= ServerControl::Args->get->{'group'} %>
+      tmp:
+         name: tmp
+         chmod: 1777
+         user: <%= ServerControl::Args->get->{'user'} %>
+         group: <%= ServerControl::Args->get->{'group'} %>
+
+   Configuration:
+      conf:
+         name: etc
+         chmod: 755
+         user: root
+         group: root
+
+Files:
+   Exec:
+      dccproc:
+         name: bin/dccproc
+         link: <%= ServerControl::Schema->get('dccproc') %>
+      dccifd:
+         name: bin/dccifd
+         link: <%= ServerControl::Schema->get('dccifd') %>
+      cdcc:
+         name: bin/cdcc
+         link: <%= ServerControl::Schema->get('cdcc') %>
+      dcciftest:
+         name: bin/dccif-test
+         link: <%= ServerControl::Schema->get('dccif-test') %>
+
+   Runtime:
+      pid:
+         name: var/run/dccifd.pid
+         call: <% sub { } %>
+
