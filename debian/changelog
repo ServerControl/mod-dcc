@@ -1,4 +1,4 @@
-servercontrol-mod-dcc (0.94) unstable; urgency=low
+servercontrol-mod-dcc (0.95) unstable; urgency=low
   * don't recreate map file on every start
   * fixed run dir
 
