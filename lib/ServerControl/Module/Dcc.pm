@@ -47,12 +47,9 @@ sub start {
    my $pid_file      = "$path/$pid_dir/$name.pid";
    my $exec_file     = ServerControl::FsLayout->get_file("Exec", "dccifd");
 
-   spawn("$path/$cdcc -h $path/$conf_dir \"load map.txt; exit;\"");
-
-
    my @options = (
       "-h " . ServerControl::Args->get->{"homedir"},
-      "-R " . $pid_dir,
+      "-R $path/$pid_dir",
       "-G off",
       "-Q",
       "-I " . ServerControl::Args->get->{"user"},
