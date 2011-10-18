@@ -1,3 +1,9 @@
+servercontrol-mod-dcc (0.96) unstable; urgency=low
+
+  * Wrong build package
+
+ -- Daniel Bäurer <daniel.baeurer@web.de>  Wed, 18 October 2011 12:52:00 +0200
+
 servercontrol-mod-dcc (0.95) unstable; urgency=low
   * don't recreate map file on every start
   * fixed run dir
